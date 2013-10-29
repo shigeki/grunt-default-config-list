@@ -1,0 +1,10 @@
+node_modules
+*~
+.o
+.a
+*.org
+.bak
+empty.txt
+empty.txt.gz
+default_config.json
+.sass-cache/
