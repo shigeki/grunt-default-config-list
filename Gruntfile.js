@@ -6,7 +6,9 @@ module.exports = function(grunt) {
   grunt.option('write', false);
   grunt.option('force', true);
   grunt.option('verbose', false);
-  grunt.log.muted = true; // disable to output log message
+  if (!grunt.option('help')) {
+    grunt.log.muted = true; // disable to output log message
+  }
 
   var config_list = {}; // store default config parameters
 
@@ -31,6 +33,7 @@ module.exports = function(grunt) {
     var fn_orig = fn;
     fn = function() {
       var context = this;
+      // define this.options() as an accessor property so as not to be overwritten
       Object.defineProperty(context, 'options', {
         get: function() {return function() {
           var args = [{}].concat(grunt.util.toArray(arguments)).concat([
