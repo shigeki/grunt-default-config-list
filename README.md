@@ -202,6 +202,23 @@ Enjoy!
 }
 ```
 
+You can choose some plugins by specifying a task name.
+
+```javascript
+%grunt concat
+{
+  "concat": {
+    "options": {
+      "separator": "\n",
+      "banner": "",
+      "footer": "",
+      "stripBanners": false,
+      "process": false
+    }
+  }
+}
+```
+
 In the forthcoming 0.4.2, options parameters defined in the task script are displayed in a verbose mode such as
 
 ```
